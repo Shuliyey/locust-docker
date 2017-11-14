@@ -1,10 +1,10 @@
 FROM python:alpine
 
-MAINTAINER "base2Services" <itsupport@base2services.com>
+MAINTAINER "叶泽宇" <shuliyey@gmail.com>
 
 RUN apk --update add tzdata g++ make \
   && pip install locustio \
-  && apk del make \
+  && apk del g++ make \
   && rm -rf /var/cache/apk/* /root/__pycache__
 
 ADD locustfile.py /root/
