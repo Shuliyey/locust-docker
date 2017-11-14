@@ -1,5 +1,5 @@
 # pyzmq missing example for locust
-Note: locust version of this example (as of date today is 2017-11-15 Australia/Melbourne time) 0.8.1
+Note: locust version of this example (as of date today, 2017-11-15 Australia/Melbourne time) is 0.8.1
 
 ## Overview
 This repo is to address locust's below issue
@@ -48,3 +48,6 @@ you should see a warning (`WARNING: Using pure Python socket RPC implementation 
 [2017-11-14 22:55:48,368] f41834333211/ERROR/stderr: module 'gevent' has no attribute 'queue'
 [2017-11-14 22:55:48,369] f41834333211/ERROR/stderr:
 ```
+
+## Notes
+the Dockerfile didn't have any step to uninstall `pyzmq`, the `pyzmq` warning is actually caused by the Dockerfile step that uninstalled `g++` (https://github.com/Shuliyey/locust-docker/blob/master/Dockerfile#L7)
