@@ -50,4 +50,4 @@ you should see a warning (`WARNING: Using pure Python socket RPC implementation 
 ```
 
 ## Notes
-the Dockerfile didn't have any step to uninstall `pyzmq`, the `pyzmq` warning is actually caused by the Dockerfile step that uninstalled `g++` (https://github.com/Shuliyey/locust-docker/blob/master/Dockerfile#L7)
+the Dockerfile didn't have any step to uninstall `pyzmq`, the `pyzmq` warning is actually caused by the Dockerfile step that uninstalled `g++` (https://github.com/Shuliyey/locust-docker/blob/master/Dockerfile#L7), error is caused by the `pyzmq` warning and a missing import in `socketrpc.py` of branch 0.8 (https://github.com/locustio/locust/blob/0.8/locust/rpc/socketrpc.py)` (there's this pull-request https://github.com/locustio/locust/pull/681  addressing the missing import)
